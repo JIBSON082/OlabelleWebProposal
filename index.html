@@ -1,1 +1,152 @@
 
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Olabelle Jewelries | Website Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0A0C;--bg2:#131116;--card:#18151b;--ivory:#F6F1E7;--gold:#D8B56A;--gold2:#F3DDA5;--rose:#C98F87;--mut:#9a92a3;--line:rgba(216,181,106,.18);--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ivory);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.gold{background:linear-gradient(100deg,var(--gold),var(--gold2),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+#prog{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));z-index:200}
+.view{display:none;position:relative;z-index:1;min-height:100vh}.view.on{display:block;animation:in .7s cubic-bezier(.2,.7,.2,1)}
+@keyframes in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+/* select */
+#home{padding:calc(56px + env(safe-area-inset-top)) 22px 60px;max-width:1080px;margin:auto;text-align:center}
+.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.brand{font-size:clamp(46px,11vw,96px);font-weight:300;line-height:1;margin:18px 0 10px}
+.brand em{font-style:italic}
+.sub{color:var(--mut);font-size:13px;letter-spacing:.05em}
+.gem{width:34px;height:34px;margin:26px auto;animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px) rotate(6deg)}}
+.lead{max-width:520px;margin:0 auto 40px;color:#cfc7d6;font-weight:300;line-height:1.8;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left}
+.pc{position:relative;background:linear-gradient(160deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:20px;padding:30px 24px;cursor:pointer;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.pc::before{content:'';position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,0),rgba(216,181,106,.16),transparent 60%);opacity:0;transition:.3s}
+.pc:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 20px 50px -20px rgba(216,181,106,.35)}.pc:hover::before{opacity:1}
+.tag{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:99px;border:1px solid var(--line);color:var(--gold);margin-bottom:18px}
+.pc h2{font-size:26px;font-weight:500;margin-bottom:10px}.pc p{font-size:13px;color:var(--mut);line-height:1.7;margin-bottom:22px}
+.price{font-size:40px;font-weight:600}.usd{font-size:12px;color:var(--mut);margin:2px 0 20px}
+.btn{display:inline-flex;gap:8px;align-items:center;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--bg);background:linear-gradient(100deg,var(--gold),var(--gold2));padding:12px 22px;border-radius:99px;border:0;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateX(4px);box-shadow:0 8px 24px -8px var(--gold)}
+.foot{margin-top:36px;font-size:12px;color:var(--mut)}
+/* nav */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:calc(12px + env(safe-area-inset-top)) 20px 12px;background:rgba(11,10,12,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav b{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500}
+.ghost{background:none;border:1px solid var(--line);color:var(--ivory);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:99px;cursor:pointer;transition:.25s}.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero{padding:70px 22px 50px;max-width:900px;margin:auto}
+.hero h1{font-size:clamp(38px,8vw,72px);font-weight:300;line-height:1.05;margin:16px 0 18px}.hero h1 em{font-style:italic}
+.hero p{color:#cfc7d6;font-weight:300;line-height:1.8;max-width:600px;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:38px}
+.stats div{background:var(--bg2);padding:18px 14px}.stats small{display:block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:6px}.stats span{font-size:15px;font-weight:500}
+main{max-width:900px;margin:auto;padding:20px 22px 90px}
+section{margin-bottom:70px}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:24px}.sh i{font-family:'Cormorant Garamond';color:var(--gold);font-size:14px}.sh h3{font-family:'Cormorant Garamond';font-size:30px;font-weight:500}.sh hr{flex:1;border:0;height:1px;background:var(--line)}
+.body{color:#cfc7d6;line-height:1.85;font-weight:300;font-size:14.5px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;transition:transform .3s,border-color .3s}.box:hover{transform:translateY(-4px);border-color:var(--gold)}
+.box h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}.box p{font-size:13px;color:var(--mut);line-height:1.7}
+.wide{grid-column:1/-1}
+.steps{position:relative;padding-left:8px}.step{display:flex;gap:18px;position:relative;padding-bottom:26px}
+.step:not(:last-child)::after{content:'';position:absolute;left:17px;top:38px;bottom:0;width:1px;background:var(--line)}
+.dot{width:36px;height:36px;flex:none;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:13px;background:var(--bg);z-index:1}
+.step h4{font-size:14px;margin:6px 0 4px;font-weight:600}.step p{font-size:13px;color:var(--mut);line-height:1.7}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.chip{text-align:center;padding:14px 8px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.chip b{display:block;font-size:12.5px;font-weight:600}.chip small{color:var(--mut);font-size:11px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.f{display:flex;gap:10px;padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:13px;line-height:1.5;color:#e2dbe8}.f svg{flex:none;width:16px;margin-top:2px;stroke:var(--gold)}
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.tl div{padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--line);border-top:2px solid var(--gold)}.tl b{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}.tl p{font-size:12.5px;color:var(--mut);line-height:1.6}
+.tbl{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.row{display:grid;grid-template-columns:1.1fr 2fr auto;gap:16px;padding:15px 18px;border-bottom:1px solid var(--line);align-items:center;font-size:13px}
+.row:nth-child(odd){background:var(--bg2)}.row b{font-weight:600}.row span{color:var(--mut);line-height:1.5}.row em{font-style:normal;color:var(--gold);font-weight:600;text-align:right}
+.row.free{background:rgba(216,181,106,.09)}.row s{color:var(--mut);margin-right:6px}.row .fb{background:#1f9d5c;color:#fff;font-size:9px;letter-spacing:.1em;padding:3px 8px;border-radius:99px}
+.total{display:flex;justify-content:space-between;padding:16px 18px;background:#000;font-weight:600}.total em{color:var(--gold);font-style:normal}
+.pb{margin-top:26px;text-align:center;padding:44px 22px;border-radius:22px;border:1px solid var(--line);background:radial-gradient(ellipse at 50% 120%,rgba(201,143,135,.25),transparent 65%),var(--bg2)}
+.pb .n{font-size:clamp(46px,10vw,78px);font-weight:600;line-height:1}.pb p{color:var(--mut);font-size:13px;margin-top:8px}
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:460px;margin:28px auto 0}.plan div{padding:18px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03)}.plan small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}.plan b{display:block;font-size:26px;font-family:'Cormorant Garamond';margin:4px 0}
+.terms .f{align-items:flex-start}.terms{display:grid;gap:10px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:28px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}.contact small{display:block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+footer{text-align:center;padding:28px;font-size:11px;color:#5d5666;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.rv.s{opacity:1;transform:none}
+@media(max-width:900px){.cards{grid-template-columns:1fr}}
+@media(max-width:720px){.cards,.grid,.feats,.contact{grid-template-columns:1fr}.chips{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr auto}.row span{grid-column:1/-1;order:3}.hero{padding-top:44px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style></head><body>
+<div id="prog"></div>
+
+<div id="home" class="view on">
+  <p class="eyebrow">Website Development Proposal</p>
+  <h1 class="brand serif">Ola<em class="gold">belle</em></h1>
+  <svg class="gem" viewBox="0 0 24 24" fill="none" stroke="#D8B56A" stroke-width="1"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 18 3-18M12 3 8 9m4-6 4 6"/></svg>
+  <p class="lead" style="margin-top:22px">Three ways to get Olabelle online. Pick the one that fits how you sell.</p>
+  <div class="cards" id="cards"></div>
+  <p class="foot">Both proposals include 12 months free maintenance and domain setup</p>
+</div>
+<div id="v1" class="view"></div><div id="v2" class="view"></div><div id="v3" class="view"></div>
+
+<script>
+const chk='<svg viewBox="0 0 16 16" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M3 8.5 6.5 12 13 4.5"/></svg>';
+const P=[{
+ n:1,tag:'Essential',name:'Showroom Website + WhatsApp Orders',price:300000,usd:'$210',wk:4,fee:10000,
+ blurb:'A beautiful, fast online showroom. Customers browse your pieces, add favourites to a cart, and send the order straight to your WhatsApp. No database and no admin panel, so it stays simple and affordable.',
+ pay:[['Customer browses and picks pieces','They explore collections, view photos, and add favourites to a cart.'],['Order summary is generated','The cart becomes a clean summary with items, quantity, country and total.'],['WhatsApp opens with the order pre-filled','One tap sends the full order to your WhatsApp number, ready to chat.'],['You confirm and share payment details','You agree on price, shipping and payment (bank transfer or otherwise) with the customer.'],['You dispatch the order','You arrange delivery and keep the customer updated on WhatsApp.']],
+ bd:[['UI/UX Design','Brand look, wireframes, all page designs, mobile-first','90000'],['Frontend Development','Next.js, TypeScript, Tailwind, GSAP animations','120000'],['WhatsApp Order Flow','Cart, order summary, pre-filled WhatsApp deep link','50000'],['Deployment and Domain','Vercel deployment, domain setup, configuration','40000']],
+ extra:['Cart and WhatsApp order flow','Product catalogue set up by the developer (no admin panel)'],
+ pages:[['Home','Full-screen hero, featured collections, best sellers, why Olabelle, testimonials, and a closing call to action.'],['Shop','Filter by category (necklaces, earrings, rings, bracelets), price and availability, with quick view.'],['Product Detail','Image gallery, zoom, description, materials, size guide, and an Order via WhatsApp button.'],['About','The Olabelle story, mission and vision, built to build trust with diaspora buyers.'],['Delivery and Shipping','Countries served, delivery times, and how ordering from abroad works.'],['Contact','WhatsApp button, contact form, and social links.']],
+ tech:[['Next.js','Framework'],['TypeScript','Language'],['Tailwind CSS','Styling'],['GSAP','Animation'],['Vercel','Hosting'],['GitHub','Version control'],['Nodemailer','Emails'],['WhatsApp API link','Orders']],
+ tl:[['Week 1','Brand direction, mockups and page approval.'],['Week 2','Frontend development of all pages.'],['Week 3','Cart, WhatsApp flow and testing.'],['Week 4','Review, revisions, domain setup and go-live.']]
+},{
+ n:2,tag:'Standard',name:'Catalogue Store + Admin Panel',price:450000,usd:'$315',wk:6,fee:15000,
+ blurb:'Everything in Essential, plus a database and admin panel. You add, edit and remove products, prices and stock yourself, anytime. Customers still order through WhatsApp.',
+ pay:[['Customer browses and picks pieces','They explore collections, view photos, and add favourites to a cart.'],['Order summary is generated','The cart becomes a clean summary with items, quantity, country and total.'],['WhatsApp opens with the order pre-filled','One tap sends the full order to your WhatsApp number, ready to chat.'],['You confirm and share payment details','You agree on price, shipping and payment (bank transfer or otherwise) with the customer.'],['You dispatch and update the order','Mark the order as shipped from your admin panel and keep the customer updated.']],
+ bd:[['UI/UX Design','Brand look, wireframes, all page designs, mobile-first','110000'],['Frontend Development','Next.js, TypeScript, Tailwind, GSAP animations','120000'],['Catalogue and Admin','Product upload, categories, pricing, stock toggle','90000'],['WhatsApp Order Flow','Cart, order summary, pre-filled WhatsApp deep link','40000'],['Backend and Database','Supabase setup, product and order records, API routes','60000'],['Deployment and Domain','Vercel deployment, domain setup, configuration','30000']],
+ extra:['Cart and WhatsApp order flow','Admin panel to manage products yourself','Database for products and orders'],
+ pages:null,
+ tech:[['Next.js','Framework'],['TypeScript','Language'],['Tailwind CSS','Styling'],['Supabase','Database'],['GSAP','Animation'],['Vercel','Hosting'],['GitHub','Version control'],['Nodemailer','Emails']],
+ tl:[['Week 1','Brand direction, mockups and page approval.'],['Weeks 2 to 3','Frontend and backend development of all pages.'],['Week 4','Catalogue, admin panel, cart, WhatsApp flow and testing.'],['Weeks 5 to 6','Review, revisions, domain setup and go-live.']]
+},{
+ n:3,tag:'Premium',name:'Full Online Store + Automated Payments',price:750000,usd:'$525',wk:8,fee:20000,
+ blurb:'Everything in Standard, plus automated checkout. Customers in Nigeria, the UK, US, Canada and beyond pay online in their own currency. Orders are recorded automatically, and customers can track them.',
+ pay:[['Customer adds pieces to cart','Items, quantity and delivery country are captured at checkout.'],['Shipping is calculated','Delivery fee is worked out by country or zone and added to the total.'],['Secure payment opens','Customer pays by card or bank in NGN, USD, GBP, EUR, CAD and more, via Paystack or Flutterwave.'],['Webhook confirms the payment','The payment provider notifies the site, which verifies it and saves the order automatically.'],['Confirmation and tracking','Customer gets an email receipt and an order status page. You get an instant alert to dispatch.']],
+ bd:[['UI/UX Design','Brand look, wireframes, all page designs, mobile-first','110000'],['Frontend Development','Next.js, TypeScript, Tailwind, GSAP animations','130000'],['Catalogue and Admin','Product upload, categories, variants, stock control','90000'],['Payment Integration','Paystack or Flutterwave, multi-currency, webhooks','180000'],['Cart, Orders and Tracking','Cart, checkout, order records, customer order status page','120000'],['Shipping and Notifications','Country-based shipping fees, order emails and alerts','70000'],['Deployment and Domain','Vercel deployment, domain setup, configuration','50000']],
+ extra:['Automated multi-currency payments','Order tracking and email receipts','Country-based shipping fees','Order management dashboard'],
+ pages:[['Home','Full-screen hero, featured collections, best sellers, why Olabelle, testimonials, and a closing call to action.'],['Shop','Filter by category, price and availability, with quick view and currency switcher.'],['Product Detail','Image gallery, zoom, materials, size guide, and Add to Cart.'],['Cart and Checkout','Secure checkout with shipping calculation and multi-currency payment.'],['Order Tracking','Customers check their order status with a reference number.'],['About, Delivery and Contact','The brand story, countries served, delivery info, WhatsApp button and contact form.']],
+ tech:[['Next.js','Framework'],['TypeScript','Language'],['Tailwind CSS','Styling'],['Supabase','Database'],['Paystack / Flutterwave','Payments'],['GSAP','Animation'],['Vercel','Hosting'],['Nodemailer','Emails']],
+ tl:[['Week 1','Brand direction, mockups and page approval.'],['Weeks 2 to 3','Frontend and backend development of all pages.'],['Weeks 4 to 5','Payments, webhooks, cart, shipping and order flow.'],['Weeks 6 to 7','Testing, security review and revisions.'],['Week 8','Domain setup, final QA and go-live.']]
+}];
+const N=x=>'₦'+Number(x).toLocaleString('en-NG');
+const T=(t,k)=>`<section><div class="sh"><i>${k}</i><h3>${t}</h3><hr></div>`;
+function build(p){
+ const base=['Custom 6-page luxury website design','Mobile-first responsive layout','Smooth GSAP animations and transitions','Image gallery with zoom on every piece','Customer-friendly WhatsApp contact button','Domain name setup and Vercel deployment','12 months free maintenance','Up to 2 rounds of design revisions'];
+ const feats=[...p.extra,...base].map(f=>`<div class="f">${chk}<span>${f}</span></div>`).join('');
+ const terms=['A 50% deposit is required before work begins.','Up to 2 rounds of revisions are included in the agreed scope.','12 months of free maintenance starts on delivery and covers bug fixes, minor content updates and performance checks. Major new features are quoted separately.','Domain cost (about $15 per year) is the client\'s responsibility from year 2.','The client provides all content: product photos, descriptions, prices, logo and brand story.'];
+ if(p.n==3)terms.push('Payment provider fees (about 1.4% to 3.8% per transaction, depending on provider and card) are charged directly by the provider and are not part of this fee.');
+ const dep=p.price/2;
+ return `<nav><b>Ola<span class="gold">belle</span></b><button class="ghost" onclick="show('home')">All proposals</button></nav>
+ <div class="hero"><p class="eyebrow">Proposal 0${p.n} · ${p.tag} Package</p><h1 class="serif">Website Development<br><em class="gold">${p.name}</em></h1><p>${p.blurb}</p>
+ <div class="stats"><div><small>Investment</small><span>${N(p.price)}</span></div><div><small>Timeline</small><span>${p.wk} Weeks</span></div><div><small>Maintenance</small><span>12 Months Free</span></div><div><small>Domain</small><span>Included</span></div></div></div>
+ <main>
+ ${T('Introduction','01')}<p class="body">Olabelle Jewelries sells quality pieces at friendly prices to Nigerians and other Africans at home and abroad, people who would pay far more for the same elegance where they live. This website is the storefront that carries that promise to every customer, in any country.</p><p class="body">It will make Olabelle look as premium as the jewelry feels, build trust with first-time buyers, and make ordering from abroad feel easy and safe.</p></section>
+ ${T('Pages and Structure','02')}<div class="grid">${p.pages.map(([a,b],i)=>`<div class="box ${i==p.pages.length-1&&p.pages.length%2?'wide':''}"><h4>${a}</h4><p>${b}</p></div>`).join('')}</div></section>
+ ${T('How Ordering Works','03')}<div class="steps">${p.pay.map(([a,b],i)=>`<div class="step"><div class="dot">${i+1}</div><div><h4>${a}</h4><p>${b}</p></div></div>`).join('')}</div></section>
+ ${T('Technology Stack','04')}<p class="body">A modern stack built for speed, security and easy updates. Fast pages matter most for customers browsing on mobile data abroad.</p><div class="chips">${p.tech.map(([a,b])=>`<div class="chip"><b>${a}</b><small>${b}</small></div>`).join('')}</div></section>
+ ${T('What is Included','05')}<div class="feats">${feats}</div></section>
+ ${T('Estimated Timeline','06')}<div class="tl">${p.tl.map(([a,b])=>`<div><b>${a}</b><p>${b}</p></div>`).join('')}</div></section>
+ ${T('Investment','07')}<div class="tbl">${p.bd.map(([a,b,c])=>`<div class="row"><b>${a}</b><span>${b}</span><em>${N(c)}</em></div>`).join('')}<div class="row free"><b>12 Months Maintenance</b><span>${N(p.fee)} x 12 months: fixes, content updates, monitoring</span><em><s>${N(p.fee*12)}</s><span class="fb">FREE</span></em></div><div class="total"><span>Total Investment · ${p.usd} USD</span><em>${N(p.price)}</em></div></div>
+ <div class="pb"><p class="eyebrow">Total Investment</p><div class="n serif gold" data-n="${p.price}">${N(p.price)}</div><p>${p.usd} USD · Maintenance worth ${N(p.fee*12)} included free</p><p style="color:var(--gold)">Domain setup included · ${p.wk} weeks delivery</p>
+ <div class="plan"><div><small>Deposit · 50%</small><b>${N(dep)}</b><small style="text-transform:none;letter-spacing:0">Before work begins</small></div><div><small>Balance · 50%</small><b>${N(dep)}</b><small style="text-transform:none;letter-spacing:0">Upon delivery</small></div></div></div></section>
+ ${T('Terms and Conditions','08')}<div class="terms">${terms.map(t=>`<div class="f">${chk}<span>${t}</span></div>`).join('')}</div></section>
+ ${T('Next Steps','09')}<p class="body" style="margin-bottom:22px">To proceed, confirm your chosen package and make the initial deposit. Work begins immediately on receipt. Questions before committing? Reach out anytime.</p><div class="contact"><div><small>Developer</small>David Ajibua</div><div><small>Email</small>davidajibua78@gmail.com</div><div><small>Phone and WhatsApp</small>07068634125</div><div><small>Date issued</small>September 30, 2026</div></div></section>
+ </main><footer>Olabelle Jewelries · Website Proposal 0${p.n} · Prepared by David Ajibua · September 30, 2026</footer>`}
+document.getElementById('cards').innerHTML=P.map(p=>`<div class="pc" onclick="show('v${p.n}')"><span class="tag">${p.tag}</span><p class="eyebrow" style="margin-bottom:8px">Proposal 0${p.n}</p><h2 class="serif">${p.name}</h2><p>${p.blurb}</p><div class="price serif gold">${N(p.price)}</div><div class="usd">Approximately ${p.usd} USD · ${p.wk} Weeks</div><span class="btn">View proposal →</span></div>`).join('');
+P[1].pages=P[0].pages;
+P.forEach(p=>document.getElementById('v'+p.n).innerHTML=build(p));
+document.querySelectorAll('.pc').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--x',e.clientX-r.left+'px');c.style.setProperty('--y',e.clientY-r.top+'px')}));
+const SEL='#home > *,.pc,.hero > *,.stats div,.sh,.body,.box,.step,.chip,.f,.tl div,.row,.total,.pb,.pb .plan div,.contact div';
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('s');io.unobserve(t);setTimeout(()=>{t.classList.remove('rv','s');t.style.transitionDelay=''},1600)}}),{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+function prep(v){v.querySelectorAll(SEL).forEach(el=>{const i=[...el.parentNode.children].indexOf(el);el.classList.remove('s');el.classList.add('rv');el.style.transitionDelay=Math.min(i,6)*90+'ms';io.observe(el)})}
+function show(id,push=true){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));const v=document.getElementById(id);v.classList.add('on');scrollTo(0,0);prep(v);if(push)history.pushState({id},'')}
+history.replaceState({id:'home'},'');prep(document.getElementById('home'));addEventListener('popstate',e=>show(e.state?e.state.id:'home',false));
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('prog').style.width=(scrollY/(h.scrollHeight-innerHeight||1)*100)+'%'},{passive:true});
+</script></body></html>
